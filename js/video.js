@@ -1,43 +1,51 @@
 var video;
+var vidVolume;
+
 
 function getVid(){
 	video = document.querySelector("#myVideo"); 
 }
 
 function playVid() { 
-
+	video.play()
 	console.log("Play Video");
 } 
 
 function pauseVid() { 
-
+	video.pause()
 	console.log("Pause Video");
 } 
 
 function decreaseSpeed() { 
-
-  	console.log("Speed is "+ );
+	video.playbackRate = video.playbackRate-.2;
+  	console.log("Speed is "+ video.playbackRate);
 } 
 
 function increaseSpeed() {
-
-	console.log("Speed is "+ );
+	video.playbackRate = video.playbackRate+.2;
+	console.log("Speed is "+ video.playbackRate);
 } 
 
 function skipAhead() {
-
-	console.log("Current location is "+ );
+	video.currentTime = video.currentTime + 60;
+	console.log("Current location is "+ video.currentTime);
 } 
 
 function mute() { 
-  	
+	if(video.muted == true){
+		video.muted = false;
   		console.log("Unmuted");
-  	
-      	console.log("Muted");
+	}
+	else{
+		video.muted = true;
+		  console.log("Muted");
+	}
 }
 
 function changeVolume() {
-;	console.log("Volume is ");
+	vidVolume = document.getElementById('volumeSlider');
+	video.volume = vidVolume;
+	console.log("Volume is " + video.volume);
 }
        
 

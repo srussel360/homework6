@@ -1,5 +1,4 @@
 var video;
-var vidVolume;
 
 
 function getVid(){
@@ -32,29 +31,32 @@ function skipAhead() {
 } 
 
 function mute() { 
+	var muteButton = document.getElementById("mute");
 	if(video.muted == true){
 		video.muted = false;
+		muteButton.innerHTML = "Mute"
   		console.log("Unmuted");
 	}
 	else{
 		video.muted = true;
-		  console.log("Muted");
+		muteButton.innerHTML = "Unmute"
+		console.log("Muted");
 	}
 }
 
 function changeVolume() {
-	vidVolume = document.getElementById('volumeSlider');
-	video.volume = vidVolume;
+	var vidVolume = document.getElementById('volumeSlider');
+	video.volume = vidVolume.value / 100;
 	console.log("Volume is " + video.volume);
 }
        
 
 function gray() { 
-
+	video.style.filter = "grayscale(100%)";
 	console.log("In grayscale")
 }
 
 function color() {
-
+	video.style.filter = "grayscale(0%)";
 	console.log("In color") 
 }

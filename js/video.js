@@ -1,5 +1,5 @@
 var video;
-
+var volume;
 
 function getVid(){
 	video = document.querySelector("#myVideo"); 
@@ -8,6 +8,10 @@ function getVid(){
 function playVid() { 
 	video.play()
 	console.log("Play Video");
+	//get the volume element
+	volume = document.querySelector("#volume");
+	//change its text
+	volume.innerHTML = video.volume * 100 + "%"
 } 
 
 function pauseVid() { 
@@ -16,12 +20,12 @@ function pauseVid() {
 } 
 
 function decreaseSpeed() { 
-	video.playbackRate = video.playbackRate-.2;
+	video.playbackRate -= .2;
   	console.log("Speed is "+ video.playbackRate);
 } 
 
 function increaseSpeed() {
-	video.playbackRate = video.playbackRate+.2;
+	video.playbackRate += .25;
 	console.log("Speed is "+ video.playbackRate);
 } 
 
@@ -31,7 +35,7 @@ function skipAhead() {
 } 
 
 function mute() { 
-	var muteButton = document.getElementById("mute");
+	var muteButton = document.querySelector("#mute");
 	if(video.muted == true){
 		video.muted = false;
 		muteButton.innerHTML = "Mute"
@@ -45,9 +49,13 @@ function mute() {
 }
 
 function changeVolume() {
-	var vidVolume = document.getElementById('volumeSlider');
+	var vidVolume = document.querySelector('#volumeSlider');
 	video.volume = vidVolume.value / 100;
 	console.log("Volume is " + video.volume);
+	//get the volume element
+	volume = document.querySelector("#volume");
+	//change its text
+	volume.innerHTML = video.volume * 100 + "%"
 }
        
 
@@ -60,3 +68,6 @@ function color() {
 	video.style.filter = "grayscale(0%)";
 	console.log("In color") 
 }
+
+
+

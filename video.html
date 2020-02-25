@@ -15,8 +15,31 @@
 
 	button{
 		margin-bottom: 5px;
+		display: inline-block;
+	}
+	/* Resources to solve button challenge */
+	/* https://teamtreehouse.com/community/putting-icons-inside-of-a-button */
+	/* https://css-tricks.com/forums/topic/image-with-after-issue/ */
+	/* https://www.w3schools.com/cssref/css3_pr_background-size.asp */
+	button.play::before {
+		height: 50px;
+		width: 50px;
+		object-fit: cover;
+		display: block;
+		background: url("images/play.png") no-repeat;
+		content: "";
+		background-size: 50px 50px;
 	}
 
+	button.pause::before {
+		height: 50px;
+		width: 50px;
+		object-fit: cover;
+		display: block;
+		background: url("images/pause.png") no-repeat;
+		content: "";
+		background-size: 50px 50px;
+	}
 	/*Use CSS before property to display the image before the text in the buttons*/
 	
 </style>

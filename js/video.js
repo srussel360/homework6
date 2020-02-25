@@ -35,7 +35,7 @@ function skipAhead() {
 } 
 
 function mute() { 
-	var muteButton = document.querySelector("#mute");
+	let muteButton = document.querySelector("#mute");
 	if(video.muted == true){
 		video.muted = false;
 		muteButton.innerHTML = "Mute"
@@ -49,7 +49,7 @@ function mute() {
 }
 
 function changeVolume() {
-	var vidVolume = document.querySelector('#volumeSlider');
+	let vidVolume = document.querySelector('#volumeSlider');
 	video.volume = vidVolume.value / 100;
 	console.log("Volume is " + video.volume);
 	//get the volume element
